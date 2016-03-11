@@ -30,14 +30,14 @@
 /* Begin PBXFileReference section */
 		28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
-		28F52D761AB24F470092561F /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F52D761AB24F470092561F /* UdacityPitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdacityPitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F52D7A1AB24F470092561F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28F52D7B1AB24F470092561F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28F52D7D1AB24F470092561F /* RecordSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundViewController.swift; sourceTree = "<group>"; };
 		28F52D801AB24F470092561F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28F52D821AB24F470092561F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28F52D851AB24F470092561F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		28F52D8B1AB24F470092561F /* Pitch PerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch PerfectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UdacityPitchPerfect.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F52D901AB24F470092561F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28F52D911AB24F470092561F /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,8 +87,8 @@
 		28F52D6D1AB24F470092561F = {
 			isa = PBXGroup;
 			children = (
-				28F52D781AB24F470092561F /* Pitch Perfect */,
-				28F52D8E1AB24F470092561F /* Pitch PerfectTests */,
+				28F52D781AB24F470092561F /* UdacityPitchPerfect */,
+				28F52D8E1AB24F470092561F /* UdacityPitchPerfectTests */,
 				28F52D771AB24F470092561F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,13 +96,13 @@
 		28F52D771AB24F470092561F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28F52D761AB24F470092561F /* Pitch Perfect.app */,
-				28F52D8B1AB24F470092561F /* Pitch PerfectTests.xctest */,
+				28F52D761AB24F470092561F /* UdacityPitchPerfect.app */,
+				28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		28F52D781AB24F470092561F /* Pitch Perfect */ = {
+		28F52D781AB24F470092561F /* UdacityPitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
 				28F52D7B1AB24F470092561F /* AppDelegate.swift */,
@@ -111,6 +111,7 @@
 				28EDF3091C92DB5100F583DB /* Controller */,
 				28F52D791AB24F470092561F /* Supporting Files */,
 			);
+			name = UdacityPitchPerfect;
 			path = "Pitch Perfect";
 			sourceTree = "<group>";
 		};
@@ -125,12 +126,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		28F52D8E1AB24F470092561F /* Pitch PerfectTests */ = {
+		28F52D8E1AB24F470092561F /* UdacityPitchPerfectTests */ = {
 			isa = PBXGroup;
 			children = (
 				28F52D911AB24F470092561F /* Pitch_PerfectTests.swift */,
 				28F52D8F1AB24F470092561F /* Supporting Files */,
 			);
+			name = UdacityPitchPerfectTests;
 			path = "Pitch PerfectTests";
 			sourceTree = "<group>";
 		};
@@ -145,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28F52D751AB24F470092561F /* Pitch Perfect */ = {
+		28F52D751AB24F470092561F /* UdacityPitchPerfect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28F52D951AB24F470092561F /* Build configuration list for PBXNativeTarget "Pitch Perfect" */;
+			buildConfigurationList = 28F52D951AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfect" */;
 			buildPhases = (
 				28F52D721AB24F470092561F /* Sources */,
 				28F52D731AB24F470092561F /* Frameworks */,
@@ -157,14 +159,14 @@
 			);
 			dependencies = (
 			);
-			name = "Pitch Perfect";
+			name = UdacityPitchPerfect;
 			productName = "Pitch Perfect";
-			productReference = 28F52D761AB24F470092561F /* Pitch Perfect.app */;
+			productReference = 28F52D761AB24F470092561F /* UdacityPitchPerfect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		28F52D8A1AB24F470092561F /* Pitch PerfectTests */ = {
+		28F52D8A1AB24F470092561F /* UdacityPitchPerfectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "Pitch PerfectTests" */;
+			buildConfigurationList = 28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfectTests" */;
 			buildPhases = (
 				28F52D871AB24F470092561F /* Sources */,
 				28F52D881AB24F470092561F /* Frameworks */,
@@ -175,9 +177,9 @@
 			dependencies = (
 				28F52D8D1AB24F470092561F /* PBXTargetDependency */,
 			);
-			name = "Pitch PerfectTests";
+			name = UdacityPitchPerfectTests;
 			productName = "Pitch PerfectTests";
-			productReference = 28F52D8B1AB24F470092561F /* Pitch PerfectTests.xctest */;
+			productReference = 28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 28F52D711AB24F470092561F /* Build configuration list for PBXProject "Pitch Perfect" */;
+			buildConfigurationList = 28F52D711AB24F470092561F /* Build configuration list for PBXProject "UdacityPitchPerfect" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -214,8 +216,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28F52D751AB24F470092561F /* Pitch Perfect */,
-				28F52D8A1AB24F470092561F /* Pitch PerfectTests */,
+				28F52D751AB24F470092561F /* UdacityPitchPerfect */,
+				28F52D8A1AB24F470092561F /* UdacityPitchPerfectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		28F52D8D1AB24F470092561F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 28F52D751AB24F470092561F /* Pitch Perfect */;
+			target = 28F52D751AB24F470092561F /* UdacityPitchPerfect */;
 			targetProxy = 28F52D8C1AB24F470092561F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -378,7 +380,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UdacityPitchPerfect;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -393,7 +395,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UdacityPitchPerfect;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -410,8 +412,8 @@
 				INFOPLIST_FILE = "Pitch PerfectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pitch Perfect.app/Pitch Perfect";
+				PRODUCT_NAME = UdacityPitchPerfect;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UdacityPitchPerfect.app/UdacityPitchPerfect";
 			};
 			name = Debug;
 		};
@@ -423,15 +425,15 @@
 				INFOPLIST_FILE = "Pitch PerfectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pitch Perfect.app/Pitch Perfect";
+				PRODUCT_NAME = UdacityPitchPerfect;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UdacityPitchPerfect.app/UdacityPitchPerfect";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28F52D711AB24F470092561F /* Build configuration list for PBXProject "Pitch Perfect" */ = {
+		28F52D711AB24F470092561F /* Build configuration list for PBXProject "UdacityPitchPerfect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28F52D931AB24F470092561F /* Debug */,
@@ -440,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28F52D951AB24F470092561F /* Build configuration list for PBXNativeTarget "Pitch Perfect" */ = {
+		28F52D951AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28F52D961AB24F470092561F /* Debug */,
@@ -449,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "Pitch PerfectTests" */ = {
+		28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28F52D991AB24F470092561F /* Debug */,

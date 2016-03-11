@@ -10,7 +10,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RecordSoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundViewController" customModule="UdacityPitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -97,7 +97,7 @@
         <!--Play Sound View Controller-->
         <scene sceneID="WEL-7e-RVx">
             <objects>
-                <viewController storyboardIdentifier="PlaySoundViewController" id="t8s-sb-rAE" customClass="PlaySoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaySoundViewController" id="t8s-sb-rAE" customClass="PlaySoundViewController" customModule="UdacityPitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KD0-jH-aad"/>
                         <viewControllerLayoutGuide type="bottom" id="zff-2F-scv"/>
