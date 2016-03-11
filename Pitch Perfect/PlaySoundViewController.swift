@@ -61,6 +61,18 @@ class PlaySoundViewController: UIViewController {
         audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
     }
 	
+	override func viewWillDisappear(animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		// Stops audio and deletes the file from the system
+		stopAudio()
+		do {
+			try NSFileManager.defaultManager().removeItemAtURL(receivedAudio.filePathUrl)
+		} catch let error as NSError {
+			print("File could not be removed. \(error.localizedDescription)")
+		}
+	}
+	
 	// MARK: IBActions
 	
 	// Selects the correct function to call for the specific button tapped
