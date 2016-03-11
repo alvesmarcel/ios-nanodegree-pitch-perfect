@@ -1,5 +1,5 @@
 //
-//  PlaySoundsViewController.swift
+//  PlaySoundViewController.swift
 //  Pitch Perfect
 //
 //  Created by Marcel Oliveira Alves on 3/18/15.
@@ -10,15 +10,14 @@
 //  "delay" and "stop" icons are protected by Creative Commons Copyright 3.0
 //  The author is Robin Kylander (website: http://www.flaticon.com/authors/robin-kylander)
 //
-//  Stop button provided by Udacity wasn't used to avoid being different from the pause button style
-//
 //  Issue: The delay button is too small; this choice was made because it would be problematic to
 //         fit all buttons in small screens (e.g. iPhone 4S)
+//
 
 import UIKit
 import AVFoundation
 
-class PlaySoundsViewController: UIViewController {
+class PlaySoundViewController: UIViewController {
 	
 	// MARK: Constants
 	
@@ -40,10 +39,14 @@ class PlaySoundsViewController: UIViewController {
 	
 	// MARK: Class variables
 	
-    var audioPlayer:AVAudioPlayer! // Used to change audio rate
-    var receivedAudio: RecordedAudio!
-    
-    var audioEngine:AVAudioEngine! // Used to pitch and delay effects
+	// The filePathUrl is used by both: audioPlayer and audioEngine
+	var receivedAudio: RecordedAudio!
+	
+	// Used to change audio rate
+    var audioPlayer:AVAudioPlayer!
+	
+	// Used to pitch and delay effects
+    var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
 	
 	// MARK: Lifecycle

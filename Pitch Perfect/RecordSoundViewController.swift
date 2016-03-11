@@ -16,7 +16,6 @@
 //  "stop" and "pause" icons are protected by Creative Commons Copyright 3.0
 //  The author is Robin Kylander (website: http://www.flaticon.com/authors/robin-kylander)
 //
-//  Original stop button image wasn't used to avoid being too different from the pause button image
 
 import UIKit
 import AVFoundation
@@ -26,43 +25,72 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	// MARK: Constants
 	
 	private let kRecordingLabelFadeTime = 0.5
+	enum UIState {
+		case Stopped, Paused, Recording
+	}
+	
+	// MARK: Outlets
     
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var pauseStopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
-    
+	
+	// MARK: Class variables
+	
     var audioRecorder:AVAudioRecorder!
     var recordedAudio: RecordedAudio!
-    
     var timer = NSTimer()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
+	
+	// MARK: Lifecycle
+	
     override func viewWillAppear(animated: Bool) {
-        pauseStopButton.hidden = true
-        recordButton.enabled = true
-        recordingLabel.text = "Tap to record"
+		super.viewWillAppear(animated)
+		
+		// audioRecorder should be set to nil to record new audio
+		audioRecorder = nil
+		
+		// The initial state when the view appears should be Stopped
+		configureUI(UIState.Stopped)
     }
+	
+	// MARK: IBActions
+	
+	// Changes UI state to Recording and calls recordAudio to save audio in a file
+	@IBAction func micButtonTapped(sender: UIButton) {
+		configureUI(UIState.Recording)
+		recordAudio()
+	}
+
+	// Configures the UI and stop or pause recording depending on whether the audioRecorder is recording
+	@IBAction func pauseStopButtonTapped(sender: UIButton) {
+		
+		// audioRecorder recording: tapping the button should pause the recording
+		if (audioRecorder.recording) {
+			configureUI(UIState.Paused)
+			audioRecorder.pause()
+		}
+		
+		// audioRecorder not recording: recording is paused; tapping the button should stop the recording
+		else {
+			audioRecorder.stop()
+			
+			// Sets AVAudioSession shared instance to be inactive
+			// This will activate audioRecorderDidFinishRecording:succesfully:
+			do {
+				try AVAudioSession.sharedInstance().setActive(false)
+			} catch let error as NSError {
+				print("AVAudioSession sharedInstance could not be set inactive. \(error.localizedDescription)")
+			}
+		}
+	}
+	
+	// MARK: Record audio
     
-    // Blinks recordingLabel according to timer
-    func blinkRecordingLabel() {
-        if (recordingLabel.alpha == 0.0) {
-            UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
-        } else {
-            UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 0.0})
-        }
-    }
-    
-    // Records audio
-    // if audioRecorder == nil, records new audio
-    // otherwise resumes the recording (that is paused)
+    // Records audio: if audioRecorder == nil, records new audio; otherwise, resume paused recording
     func recordAudio() {
+		
+		// Records new audio
         if (audioRecorder == nil) {
-            print("Recording new audio")
-            
             let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
             
             // Creating a unique name based on date and time and using it to create a filePath
@@ -73,89 +101,82 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
             let pathArray = [dirPath, recordingName]
             let filePath = NSURL.fileURLWithPathComponents(pathArray)
             print(filePath)
-            
+			
             let session = AVAudioSession.sharedInstance()
             do {
                 try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            } catch _ {
+            } catch let error as NSError {
+				print("Error trying to set audio session category. \(error.localizedDescription)")
             }
-            
+			
+			// Initialize audioRecorder and sets its delegate
 			audioRecorder = try? AVAudioRecorder(URL: filePath!, settings: [String : AnyObject]())
             audioRecorder.delegate = self
-            audioRecorder.meteringEnabled = true
+			
+			// Start recording
             audioRecorder.prepareToRecord()
             audioRecorder.record()
-        } else {
-            print("Resuming recording audio")
+        }
+		
+		// Recording is paused: resume the recording
+		else {
             audioRecorder.record()
         }
     }
-    
-    // Perform many UI configurations when micButton is tapped and also calls recordAudio
-    @IBAction func micButtonTapped(sender: UIButton) {
-        recordingLabel.alpha = 1.0
-        recordingLabel.text = "recording"
-        pauseStopButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
-        pauseStopButton.hidden = false
-        recordButton.enabled = false
-        
-        // start timer to make recordingLabel blink - indicates that the app is working
-        timer = NSTimer.scheduledTimerWithTimeInterval(kRecordingLabelFadeTime, target:self, selector: Selector("blinkRecordingLabel"), userInfo: nil, repeats: true)
-        
-        recordAudio()
-    }
-    
-    // Treat events when pauseStopButton is tapped
-    // If audioRecorder is recording ("pause" image in the button), it stops the recording and changes
-    // the button image ("stop" image). If it isn't recording, audioRecorder stops and the delegate method
-    // audioRecorderDidFinishRecording will be called (segue will be performed)
-    @IBAction func pauseStopButtonTapped(sender: UIButton) {
-        if (audioRecorder.recording) {
-            print("Recording paused")
-            
-            // stop timer; recordingLabel stops blinking
-            timer.invalidate()
-            
-            recordingLabel.alpha = 1.0
-            recordingLabel.text = "recording paused"
-            audioRecorder.pause()
-            recordButton.enabled = true
-            pauseStopButton.setImage(UIImage(named: "stop"), forState: UIControlState.Normal)
-        } else {
-            print("Recording is finished! Delegate will perform segue")
-            audioRecorder.stop()
-            
-            // guarantees that a new audio will be recorded when the user go back to RecordSoundView
-            // the test is performed in recordAudio
-            audioRecorder = nil
-            
-            let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setActive(false)
-            } catch _ {
-            }
-        }
-    }
-    
-    // Perform segue to PlaySoundsView if the audio was successfully recorded
+	
+	// MARK: AVAudioRecorderDelegate methods
+	
+    // Perform segue to PlaySoundsViewController if the audio was successfully recorded
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        if (flag) {
+		if (flag) {
+			// Recording was successful: perform segue
             recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
-            self.performSegueWithIdentifier("recordPlaySegue", sender: recordedAudio)
+			
+			// Presenting PlaySoundsViewController and passing the recordedAudio to it
+			let controller = storyboard?.instantiateViewControllerWithIdentifier("PlaySoundViewController") as! PlaySoundViewController
+			controller.receivedAudio = recordedAudio
+			self.showViewController(controller, sender: self)
         } else {
+			// Recording was not successful: should go back to initial state
             print("Recording not successful")
-            recordButton.enabled = true
-            pauseStopButton.hidden = true
+            configureUI(UIState.Stopped)
         }
     }
-    
-    // Passes audioData (RecordedAudio) to PlaySoundViewController when the segue is performed
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "recordPlaySegue") {
-            let playSoundsVC = segue.destinationViewController as! PlaySoundsViewController
-            let data = sender as! RecordedAudio
-            playSoundsVC.receivedAudio = data
-        }
-    }
+	
+	// MARK: Helper methods
+	
+	// Configure UI based on the UIState informed
+	func configureUI(state: UIState) {
+		switch (state) {
+		case .Stopped:
+			pauseStopButton.hidden = true
+			recordButton.enabled = true
+			recordingLabel.text = "Tap to record"
+			break
+		case .Paused:
+			timer.invalidate()
+			recordingLabel.alpha = 1.0
+			recordingLabel.text = "recording paused"
+			recordButton.enabled = true
+			pauseStopButton.setImage(UIImage(named: "stop"), forState: UIControlState.Normal)
+			break
+		case .Recording:
+			recordingLabel.alpha = 1.0
+			recordingLabel.text = "recording"
+			pauseStopButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
+			pauseStopButton.hidden = false
+			recordButton.enabled = false
+			timer = NSTimer.scheduledTimerWithTimeInterval(kRecordingLabelFadeTime, target:self, selector: "blinkRecordingLabel", userInfo: nil, repeats: true)
+			break
+		}
+	}
+	
+	// Blinks recordingLabel according to timer
+	func blinkRecordingLabel() {
+		if (recordingLabel.alpha == 0.0) {
+			UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
+		} else {
+			UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 0.0})
+		}
+	}
 }
-

@@ -88,17 +88,16 @@
                         <outlet property="pauseStopButton" destination="A5D-xS-Px8" id="Wtx-gd-6nj"/>
                         <outlet property="recordButton" destination="Yp1-Dw-VjG" id="H8H-1m-0YZ"/>
                         <outlet property="recordingLabel" destination="QgW-Al-DFl" id="EqM-dD-MgP"/>
-                        <segue destination="t8s-sb-rAE" kind="show" identifier="recordPlaySegue" id="aLZ-sf-IX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1348.5" y="-458"/>
         </scene>
-        <!--Play Sounds View Controller-->
+        <!--Play Sound View Controller-->
         <scene sceneID="WEL-7e-RVx">
             <objects>
-                <viewController id="t8s-sb-rAE" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaySoundViewController" id="t8s-sb-rAE" customClass="PlaySoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KD0-jH-aad"/>
                         <viewControllerLayoutGuide type="bottom" id="zff-2F-scv"/>
@@ -112,6 +111,9 @@
                                 <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="94" width="100" height="100"/>
+                                </variation>
                                 <connections>
                                     <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="lum-RU-wgK"/>
                                 </connections>
@@ -121,6 +123,9 @@
                                 <state key="normal" image="fast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="255" y="94" width="100" height="100"/>
+                                </variation>
                                 <connections>
                                     <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="vlf-xd-sQe"/>
                                 </connections>
@@ -138,6 +143,9 @@
                                 <state key="normal" image="chipmunk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="254" width="100" height="100"/>
+                                </variation>
                                 <connections>
                                     <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="NFP-SJ-A30"/>
                                 </connections>
@@ -147,6 +155,9 @@
                                 <state key="normal" image="darthvader">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="255" y="254" width="100" height="100"/>
+                                </variation>
                                 <connections>
                                     <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="dyl-aU-b9U"/>
                                 </connections>
@@ -155,6 +166,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="tintColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="delay"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="175" y="199" width="50" height="50"/>
+                                </variation>
                                 <connections>
                                     <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="KFZ-VN-ZIX"/>
                                 </connections>

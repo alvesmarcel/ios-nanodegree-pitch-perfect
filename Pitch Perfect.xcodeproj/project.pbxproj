@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28A034231ABA48AD006F6846 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A034221ABA48AD006F6846 /* PlaySoundsViewController.swift */; };
+		28A034231ABA48AD006F6846 /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */; };
 		28DB3B8B1AC5E445006490DF /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */; };
 		28F52D7C1AB24F470092561F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F52D7B1AB24F470092561F /* AppDelegate.swift */; };
 		28F52D7E1AB24F470092561F /* RecordSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F52D7D1AB24F470092561F /* RecordSoundViewController.swift */; };
@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		28A034221ABA48AD006F6846 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		28F52D761AB24F470092561F /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F52D7A1AB24F470092561F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				28F52D7D1AB24F470092561F /* RecordSoundViewController.swift */,
-				28A034221ABA48AD006F6846 /* PlaySoundsViewController.swift */,
+				28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			files = (
 				28DB3B8B1AC5E445006490DF /* RecordedAudio.swift in Sources */,
 				28F52D7E1AB24F470092561F /* RecordSoundViewController.swift in Sources */,
-				28A034231ABA48AD006F6846 /* PlaySoundsViewController.swift in Sources */,
+				28A034231ABA48AD006F6846 /* PlaySoundViewController.swift in Sources */,
 				28F52D7C1AB24F470092561F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
