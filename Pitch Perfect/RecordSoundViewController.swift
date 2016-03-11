@@ -22,6 +22,10 @@ import UIKit
 import AVFoundation
 
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
+	
+	// MARK: Constants
+	
+	private let kRecordingLabelFadeTime = 0.5
     
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var pauseStopButton: UIButton!
@@ -46,9 +50,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     // Blinks recordingLabel according to timer
     func blinkRecordingLabel() {
         if (recordingLabel.alpha == 0.0) {
-            UIView.animateWithDuration(Constants.FadeTimes.recordingLabel, animations: {self.recordingLabel.alpha = 1.0})
+            UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
         } else {
-            UIView.animateWithDuration(Constants.FadeTimes.recordingLabel, animations: {self.recordingLabel.alpha = 0.0})
+            UIView.animateWithDuration(kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 0.0})
         }
     }
     
@@ -96,7 +100,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.enabled = false
         
         // start timer to make recordingLabel blink - indicates that the app is working
-        timer = NSTimer.scheduledTimerWithTimeInterval(Constants.FadeTimes.recordingLabel, target:self, selector: Selector("blinkRecordingLabel"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(kRecordingLabelFadeTime, target:self, selector: Selector("blinkRecordingLabel"), userInfo: nil, repeats: true)
         
         recordAudio()
     }

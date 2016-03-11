@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RXa-ne-AJe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RXa-ne-AJe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -112,7 +113,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="M9m-Fn-ZkB"/>
+                                    <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="lum-RU-wgK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k0-OA-Urq">
@@ -121,7 +122,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="Obo-GX-Yju"/>
+                                    <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="vlf-xd-sQe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OS-yI-6Ny">
@@ -129,7 +130,7 @@
                                 <color key="tintColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="stop"/>
                                 <connections>
-                                    <action selector="stopAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="tKD-WU-gmv"/>
+                                    <action selector="stopButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="JW3-hc-IZd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEJ-71-TUW">
@@ -138,7 +139,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="uQu-9h-eFJ"/>
+                                    <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="NFP-SJ-A30"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wV5-Rx-vrx">
@@ -147,7 +148,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="kiN-JW-2Dd"/>
+                                    <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="dyl-aU-b9U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOD-5z-hdD">
@@ -155,7 +156,7 @@
                                 <color key="tintColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="delay"/>
                                 <connections>
-                                    <action selector="playAudio:" destination="t8s-sb-rAE" eventType="touchUpInside" id="5FF-1z-4ie"/>
+                                    <action selector="effectButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="KFZ-VN-ZIX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -223,6 +224,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="chipmunkEffectButton" destination="SEJ-71-TUW" id="joz-SI-kMF"/>
+                        <outlet property="darthVaderEffectButton" destination="wV5-Rx-vrx" id="ncw-LE-IWK"/>
+                        <outlet property="delayEffectButton" destination="VOD-5z-hdD" id="eiL-BD-M3x"/>
+                        <outlet property="fastEffectButton" destination="2k0-OA-Urq" id="xQO-du-82i"/>
+                        <outlet property="slowEffectButton" destination="PRh-iC-lpa" id="i3H-Rv-W8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1m-qN-TBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
