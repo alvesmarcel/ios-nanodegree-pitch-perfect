@@ -60,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286824EC1C95B8DE00B11691 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				28F52D7F1AB24F470092561F /* Main.storyboard */,
+				28F52D841AB24F470092561F /* LaunchScreen.xib */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		28EDF3091C92DB5100F583DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +127,7 @@
 		28F52D791AB24F470092561F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				28F52D7F1AB24F470092561F /* Main.storyboard */,
-				28F52D841AB24F470092561F /* LaunchScreen.xib */,
+				286824EC1C95B8DE00B11691 /* Storyboards */,
 				28F52D821AB24F470092561F /* Images.xcassets */,
 				28F52D7A1AB24F470092561F /* Info.plist */,
 			);
