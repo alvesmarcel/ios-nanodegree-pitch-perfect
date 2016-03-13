@@ -13,27 +13,22 @@
 //  - After the recording is finished, a segue to PlaySoundsView is performed
 //  - The recorded audio is passed (as RecordedAudio) to PlaySoundsViewController
 //
-//  "stop" and "pause" icons are protected by Creative Commons Copyright 3.0
-//  The author is Robin Kylander (website: http://www.flaticon.com/authors/robin-kylander)
-//
 
 import UIKit
 import AVFoundation
 
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
-	// MARK: Constants
-	
-	private let kRecordingLabelFadeTime = 0.5
-	enum UIState {
-		case Stopped, Paused, Recording
-	}
-	
 	// MARK: Outlets
     
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var pauseStopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+	
+	// MARK: Constants
+	
+	private let kRecordingLabelFadeTime = 0.5
+	enum UIState { case Stopped, Paused, Recording }
 	
 	// MARK: Class variables
 	

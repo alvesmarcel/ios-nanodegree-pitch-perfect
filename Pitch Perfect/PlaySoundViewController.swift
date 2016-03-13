@@ -7,27 +7,11 @@
 //
 //  - Plays the recorded audio with an effect (Slow, Fast, Chipmunk, Darth Vader or Delay)
 //
-//  "delay" and "stop" icons are protected by Creative Commons Copyright 3.0
-//  The author is Robin Kylander (website: http://www.flaticon.com/authors/robin-kylander)
-//
-//  Issue: The delay button is too small; this choice was made because it would be problematic to
-//         fit all buttons in small screens (e.g. iPhone 4S)
-//
 
 import UIKit
 import AVFoundation
 
 class PlaySoundViewController: UIViewController {
-	
-	// MARK: Constants
-	
-	private struct AudioParam {
-		static let Slow = Float(0.5)
-		static let Fast = Float(1.5)
-		static let Chipmunk = Float(1000)
-		static let DarthVader = Float(-1000)
-		static let Delay = Float(0.125)
-	}
 	
 	// MARK: Outlets
 	
@@ -35,7 +19,22 @@ class PlaySoundViewController: UIViewController {
 	@IBOutlet weak var fastEffectButton: UIButton!
 	@IBOutlet weak var chipmunkEffectButton: UIButton!
 	@IBOutlet weak var darthVaderEffectButton: UIButton!
-	@IBOutlet weak var delayEffectButton: UIButton!
+	@IBOutlet weak var reverbEffectButton: UIButton!
+	
+	// MARK: Constants
+	
+	private struct AudioParam {
+		// Audio rate, range: 0.5 (half speed) - 2.0 (double speed)
+		static let Slow = Float(0.5)
+		static let Fast = Float(1.5)
+		
+		// Pitch modifier, range: -2400 (2 octaves down) - 2400 (2 octaves up)
+		static let Chipmunk = Float(1000)
+		static let DarthVader = Float(-1000)
+		
+		// Reverb wet/dry mix, range: 0 (no mix) - 100 (total mix)
+		static let Reverb = Float(70.0)
+	}
 	
 	// MARK: Class variables
 	
@@ -95,8 +94,8 @@ class PlaySoundViewController: UIViewController {
 		case darthVaderEffectButton:
 			playAudioEngineWithEffect(getPitchEffect(AudioParam.DarthVader))
 			break
-		case delayEffectButton:
-			playAudioEngineWithEffect(getDelayEffect(AudioParam.Delay))
+		case reverbEffectButton:
+			playAudioEngineWithEffect(getReverbEffect(AudioParam.Reverb))
 			break
 		default:
 			print("Unexpected button tapped")
@@ -158,9 +157,10 @@ class PlaySoundViewController: UIViewController {
     }
     
     // Returns the delay effect with a delay time
-    func getDelayEffect(delayTime: Float) -> AVAudioUnit {
-        let delayEffect = AVAudioUnitDelay()
-        delayEffect.delayTime = NSTimeInterval(delayTime)
-		return delayEffect
+    func getReverbEffect(wetDryMix: Float) -> AVAudioUnit {
+        let reverbEffect = AVAudioUnitReverb()
+		reverbEffect.loadFactoryPreset(.Cathedral)
+        reverbEffect.wetDryMix = wetDryMix
+		return reverbEffect
     }
 }

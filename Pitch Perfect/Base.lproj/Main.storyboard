@@ -310,8 +310,8 @@
                     <connections>
                         <outlet property="chipmunkEffectButton" destination="okc-Yk-KKS" id="Cin-T6-3oC"/>
                         <outlet property="darthVaderEffectButton" destination="VCM-1n-nzt" id="dtg-Ji-suz"/>
-                        <outlet property="delayEffectButton" destination="OpG-tH-mpf" id="gHx-9E-NSB"/>
                         <outlet property="fastEffectButton" destination="Xc2-c3-E6C" id="IR2-ho-RTY"/>
+                        <outlet property="reverbEffectButton" destination="OpG-tH-mpf" id="tSX-AS-qm0"/>
                         <outlet property="slowEffectButton" destination="vJe-mA-dHP" id="6ct-lJ-lUA"/>
                     </connections>
                 </viewController>
