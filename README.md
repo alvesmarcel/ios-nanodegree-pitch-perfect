@@ -10,7 +10,7 @@ Clone the GitHub repository:
 ```shell
 $ git clone https://github.com/alvesmarcel/ios-nanodegree-pitch-perfect.git
 ```
-Then open UdacityPitchPerfect.xcodeproj in Xcode and build it.
+Then open UdacityPitchPerfect.xcodeproj in Xcode (7.0 or above) and build it.
 
 ## Usage
 
@@ -22,7 +22,7 @@ Then open UdacityPitchPerfect.xcodeproj in Xcode and build it.
 
 ### Audio effects screen
 
-* The user should tap an **effect button** (delay, chipmunk, darth vader, fast or slow) to play the recorded audio with the respective effect.
+* The user should tap an **effect button** (reverb, chipmunk, darth vader, fast or slow) to play the recorded audio with the respective effect.
 
 ## Frameworks
 
