@@ -76,7 +76,7 @@ class PlaySoundViewController: UIViewController {
 	// MARK: IBActions
 	
 	// Selects the correct function to call for the specific button tapped
-	@IBAction func effectButtonTapped(sender: UIButton) {
+	@IBAction func playSoundForButton(sender: UIButton) {
 		
 		// Stop audio that might be playing to avoid unexpected behavior
 		stopAudio()
