@@ -14,7 +14,6 @@
 		28F52D811AB24F470092561F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F52D7F1AB24F470092561F /* Main.storyboard */; };
 		28F52D831AB24F470092561F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F52D821AB24F470092561F /* Images.xcassets */; };
 		28F52D861AB24F470092561F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F52D841AB24F470092561F /* LaunchScreen.xib */; };
-		28F52D921AB24F470092561F /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F52D911AB24F470092561F /* Pitch_PerfectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +37,6 @@
 		28F52D821AB24F470092561F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28F52D851AB24F470092561F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UdacityPitchPerfect.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		28F52D901AB24F470092561F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28F52D911AB24F470092561F /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				28F52D781AB24F470092561F /* UdacityPitchPerfect */,
-				28F52D8E1AB24F470092561F /* UdacityPitchPerfectTests */,
 				28F52D771AB24F470092561F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,24 +126,6 @@
 				286824EC1C95B8DE00B11691 /* Storyboards */,
 				28F52D821AB24F470092561F /* Images.xcassets */,
 				28F52D7A1AB24F470092561F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		28F52D8E1AB24F470092561F /* UdacityPitchPerfectTests */ = {
-			isa = PBXGroup;
-			children = (
-				28F52D911AB24F470092561F /* Pitch_PerfectTests.swift */,
-				28F52D8F1AB24F470092561F /* Supporting Files */,
-			);
-			name = UdacityPitchPerfectTests;
-			path = "Pitch PerfectTests";
-			sourceTree = "<group>";
-		};
-		28F52D8F1AB24F470092561F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				28F52D901AB24F470092561F /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -266,7 +244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28F52D921AB24F470092561F /* Pitch_PerfectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
