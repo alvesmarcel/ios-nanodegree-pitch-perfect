@@ -16,16 +16,6 @@
 		28F52D861AB24F470092561F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F52D841AB24F470092561F /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		28F52D8C1AB24F470092561F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28F52D6E1AB24F470092561F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28F52D751AB24F470092561F;
-			remoteInfo = "Pitch Perfect";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
@@ -36,18 +26,10 @@
 		28F52D801AB24F470092561F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28F52D821AB24F470092561F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28F52D851AB24F470092561F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UdacityPitchPerfect.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		28F52D731AB24F470092561F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28F52D881AB24F470092561F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				28F52D761AB24F470092561F /* UdacityPitchPerfect.app */,
-				28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,24 +131,6 @@
 			productReference = 28F52D761AB24F470092561F /* UdacityPitchPerfect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		28F52D8A1AB24F470092561F /* UdacityPitchPerfectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfectTests" */;
-			buildPhases = (
-				28F52D871AB24F470092561F /* Sources */,
-				28F52D881AB24F470092561F /* Frameworks */,
-				28F52D891AB24F470092561F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				28F52D8D1AB24F470092561F /* PBXTargetDependency */,
-			);
-			name = UdacityPitchPerfectTests;
-			productName = "Pitch PerfectTests";
-			productReference = 28F52D8B1AB24F470092561F /* UdacityPitchPerfect.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,10 +145,6 @@
 					28F52D751AB24F470092561F = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = Z2U9XN2WL3;
-					};
-					28F52D8A1AB24F470092561F = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 28F52D751AB24F470092561F;
 					};
 				};
 			};
@@ -203,7 +162,6 @@
 			projectRoot = "";
 			targets = (
 				28F52D751AB24F470092561F /* UdacityPitchPerfect */,
-				28F52D8A1AB24F470092561F /* UdacityPitchPerfectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +174,6 @@
 				28F52D811AB24F470092561F /* Main.storyboard in Resources */,
 				28F52D861AB24F470092561F /* LaunchScreen.xib in Resources */,
 				28F52D831AB24F470092561F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28F52D891AB24F470092561F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,22 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		28F52D871AB24F470092561F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		28F52D8D1AB24F470092561F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28F52D751AB24F470092561F /* UdacityPitchPerfect */;
-			targetProxy = 28F52D8C1AB24F470092561F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28F52D7F1AB24F470092561F /* Main.storyboard */ = {
@@ -385,36 +321,6 @@
 			};
 			name = Release;
 		};
-		28F52D991AB24F470092561F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pitch PerfectTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = UdacityPitchPerfect;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UdacityPitchPerfect.app/UdacityPitchPerfect";
-			};
-			name = Debug;
-		};
-		28F52D9A1AB24F470092561F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "Pitch PerfectTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alvesmarcel.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = UdacityPitchPerfect;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UdacityPitchPerfect.app/UdacityPitchPerfect";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -432,15 +338,6 @@
 			buildConfigurations = (
 				28F52D961AB24F470092561F /* Debug */,
 				28F52D971AB24F470092561F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		28F52D981AB24F470092561F /* Build configuration list for PBXNativeTarget "UdacityPitchPerfectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28F52D991AB24F470092561F /* Debug */,
-				28F52D9A1AB24F470092561F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
