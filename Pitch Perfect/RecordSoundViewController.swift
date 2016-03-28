@@ -5,18 +5,14 @@
 //  Created by Marcel Oliveira Alves on 3/12/15.
 //  Copyright (c) 2015 Marcel Oliveira Alves. All rights reserved.
 //
-//  - This class records audio when the microphone button is tapped
-//  - It is possible to pause during the recording and start recording again
-//  -- tapping pause button (pauseStopButton with "pause" image) pauses the audio
-//  -- tapping mic button when the audio is paused will restart the recording (from where it was paused)
-//  - To finish recording, the user must tap the stop button (pauseStopButton with "stop" image)
-//  - After the recording is finished, a segue to PlaySoundsView is performed
-//  - The recorded audio is passed (as RecordedAudio) to PlaySoundsViewController
-//
 
 import UIKit
 import AVFoundation
 
+/**
+ A UIViewController subclass responsible for the recording screen.
+ Conforms AVAudioRecorderDelegate protocol.
+ */
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: Outlets
@@ -27,14 +23,17 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: Constants
 	
+    // Indicates the time/speed (in seconds) to blink the recordingLabel.
 	private let kRecordingLabelFadeTime = 0.5
-	enum UIState { case Stopped, Paused, Recording }
+    
+    // Represents the 3 possible states of the recording
+    enum UIState { case Stopped, Paused, Recording }
 	
 	// MARK: Class variables
-	
-    var audioRecorder:AVAudioRecorder!
-    var recordedAudio: RecordedAudio!
-    var timer = NSTimer()
+
+    private var audioRecorder:AVAudioRecorder!
+    private var recordedAudio: RecordedAudio!
+    private var timer = NSTimer()
 	
 	// MARK: Lifecycle
 	
@@ -50,22 +49,22 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: IBActions
 	
-	// Changes UI state to Recording and calls recordAudio to save audio in a file
+	/// Changes UI state to Recording and calls recordAudio to save audio in a file
 	@IBAction func micButtonTapped(sender: UIButton) {
 		configureUI(UIState.Recording)
 		recordAudio()
 	}
 
-	// Configures the UI and stop or pause recording depending on whether the audioRecorder is recording
+	/// Configures the UI and stops or pauses recording depending on whether the audioRecorder is recording
 	@IBAction func pauseStopButtonTapped(sender: UIButton) {
 		
-		// audioRecorder recording: tapping the button should pause the recording
+		// if it's recording: tapping the button should pause the recording
 		if (audioRecorder.recording) {
 			configureUI(UIState.Paused)
 			audioRecorder.pause()
 		}
 		
-		// audioRecorder not recording: recording is paused; tapping the button should stop the recording
+		// if it's not recording: recording is paused; tapping the button should stop the recording
 		else {
 			audioRecorder.stop()
 			
@@ -81,10 +80,10 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: Record audio
     
-    // Records audio: if audioRecorder == nil, records new audio; otherwise, resume paused recording
+    /// Records audio: if audioRecorder == nil, records new audio; otherwise, resume paused recording
     func recordAudio() {
 		
-		// Records new audio
+		// Records new audio (recording is not paused)
         if (audioRecorder == nil) {
             let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
             
