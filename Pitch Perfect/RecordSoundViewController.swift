@@ -161,7 +161,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 			pauseStopButton.setImage(UIImage(named: "pause_200_blue"), forState: UIControlState.Normal)
 			pauseStopButton.hidden = false
 			recordButton.enabled = false
-			timer = NSTimer.scheduledTimerWithTimeInterval(kRecordingLabelFadeTime, target:self, selector: "blinkRecordingLabel", userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(kRecordingLabelFadeTime, target:self, selector: #selector(blinkRecordingLabel), userInfo: nil, repeats: true)
 			break
 		}
 	}
