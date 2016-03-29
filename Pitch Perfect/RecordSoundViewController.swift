@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 /**
- A UIViewController subclass responsible for the recording screen.
+ An UIViewController subclass responsible for the recording screen.
  Conforms AVAudioRecorderDelegate protocol.
  */
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
@@ -49,13 +49,13 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: IBActions
 	
-	/// Changes UI state to Recording and calls recordAudio to save audio in a file
+	// Changes UI state to Recording and calls recordAudio to save audio in a file
 	@IBAction func micButtonTapped(sender: UIButton) {
 		configureUI(UIState.Recording)
 		recordAudio()
 	}
 
-	/// Configures the UI and stops or pauses recording depending on whether the audioRecorder is recording
+	// Configures the UI and stops or pauses recording depending on whether the audioRecorder is recording
 	@IBAction func pauseStopButtonTapped(sender: UIButton) {
 		
 		// if it's recording: tapping the button should pause the recording
@@ -80,7 +80,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: Record audio
     
-    /// Records audio: if audioRecorder == nil, records new audio; otherwise, resume paused recording
+    // Records audio: if audioRecorder == nil, records new audio; otherwise, resume paused recording
     func recordAudio() {
 		
 		// Records new audio (recording is not paused)

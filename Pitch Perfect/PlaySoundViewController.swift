@@ -5,12 +5,13 @@
 //  Created by Marcel Oliveira Alves on 3/18/15.
 //  Copyright (c) 2015 Marcel Oliveira Alves. All rights reserved.
 //
-//  - Plays the recorded audio with an effect (Slow, Fast, Chipmunk, Darth Vader or Delay)
-//
 
 import UIKit
 import AVFoundation
 
+/**
+ An UIViewController subclass responsible for the audio playing screen.
+ */
 class PlaySoundViewController: UIViewController {
 	
 	// MARK: Outlets
@@ -39,14 +40,14 @@ class PlaySoundViewController: UIViewController {
 	// MARK: Class variables
 	
 	// The filePathUrl is used by both: audioPlayer and audioEngine
-	var receivedAudio: RecordedAudio!
+    var receivedAudio: RecordedAudio!
 	
 	// Used to change audio rate
-    var audioPlayer:AVAudioPlayer!
+    private var audioPlayer:AVAudioPlayer!
 	
 	// Used to pitch and delay effects
-    var audioEngine:AVAudioEngine!
-    var audioFile:AVAudioFile!
+    private var audioEngine:AVAudioEngine!
+    private var audioFile:AVAudioFile!
 	
 	// MARK: Lifecycle
 	
