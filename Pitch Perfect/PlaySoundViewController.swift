@@ -24,7 +24,7 @@ class PlaySoundViewController: UIViewController {
 	
 	// MARK: Constants
 	
-	private struct AudioParam {
+	fileprivate struct AudioParam {
 		// Audio rate, range: 0.5 (half speed) - 2.0 (double speed)
 		static let Slow = Float(0.5)
 		static let Fast = Float(1.5)
@@ -43,31 +43,31 @@ class PlaySoundViewController: UIViewController {
     var receivedAudio: RecordedAudio!
 	
 	// Used to change audio rate
-    private var audioPlayer:AVAudioPlayer!
+    fileprivate var audioPlayer:AVAudioPlayer!
 	
 	// Used to pitch and delay effects
-    private var audioEngine:AVAudioEngine!
-    private var audioFile:AVAudioFile!
+    fileprivate var audioEngine:AVAudioEngine!
+    fileprivate var audioFile:AVAudioFile!
 	
 	// MARK: Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        audioPlayer = try? AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
+        audioPlayer = try? AVAudioPlayer(contentsOf: receivedAudio.filePathUrl as URL)
         audioPlayer.enableRate = true // required to change the audio rate
 		
         audioEngine = AVAudioEngine()
-        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
+        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl as URL)
     }
 	
-	override func viewWillDisappear(animated: Bool) {
+	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		
 		// Stops audio and deletes the file from the system
 		stopAudio()
 		do {
-			try NSFileManager.defaultManager().removeItemAtURL(receivedAudio.filePathUrl)
+			try FileManager.default.removeItem(at: receivedAudio.filePathUrl as URL)
 		} catch let error as NSError {
 			print("File could not be removed. \(error.localizedDescription)")
 		}
@@ -76,7 +76,7 @@ class PlaySoundViewController: UIViewController {
 	// MARK: IBActions
 	
 	// Selects the correct function to call for the specific button tapped
-	@IBAction func playSoundForButton(sender: UIButton) {
+	@IBAction func playSoundForButton(_ sender: UIButton) {
 		
 		// Stop audio that might be playing to avoid unexpected behavior
 		stopAudio()
@@ -104,32 +104,32 @@ class PlaySoundViewController: UIViewController {
 	}
 	
 	// Stops audioPlayer (for slow and fast effects) and audioEngine (for pitch and delay effects)
-	@IBAction func stopButtonTapped(sender: UIButton) {
+	@IBAction func stopButtonTapped(_ sender: UIButton) {
 		stopAudio()
 	}
 	
 	// MARK: Play and stop audio methods
 	
 	// Plays audio player with the specified rate
-	func playAudioPlayerWithRate(rate: Float) {
+	func playAudioPlayerWithRate(_ rate: Float) {
 		audioPlayer.rate = rate
 		audioPlayer.play()
 	}
 	
 	// Plays audio with an audio engine, applying an audio effect
-	func playAudioEngineWithEffect(audioUnitEffect: AVAudioUnit) {
+	func playAudioEngineWithEffect(_ audioUnitEffect: AVAudioUnit) {
 		
 		// Initialize audioEngine
 		let audioPlayerNode = AVAudioPlayerNode()
-		audioEngine.attachNode(audioPlayerNode)
+		audioEngine.attach(audioPlayerNode)
 
 		// Attaches the effect to the audio engine and connects it to the output
-		audioEngine.attachNode(audioUnitEffect)
+		audioEngine.attach(audioUnitEffect)
 		audioEngine.connect(audioPlayerNode, to: audioUnitEffect, format: nil)
 		audioEngine.connect(audioUnitEffect, to: audioEngine.outputNode, format: nil)
 		
 		// Schedules the file to play and starts the audio engine
-		audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+		audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
 		do {
 			try audioEngine.start()
 		} catch let error as NSError {
@@ -151,16 +151,16 @@ class PlaySoundViewController: UIViewController {
 	// MARK: Helper methods
 	
     // Returns a pitch effect (used for Darth Vader or Chipmunk effects)
-	func getPitchEffect(pitch: Float) -> AVAudioUnit {
+	func getPitchEffect(_ pitch: Float) -> AVAudioUnit {
         let changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
         return changePitchEffect
     }
     
     // Returns the delay effect with a delay time
-    func getReverbEffect(wetDryMix: Float) -> AVAudioUnit {
+    func getReverbEffect(_ wetDryMix: Float) -> AVAudioUnit {
         let reverbEffect = AVAudioUnitReverb()
-		reverbEffect.loadFactoryPreset(.Cathedral)
+		reverbEffect.loadFactoryPreset(.cathedral)
         reverbEffect.wetDryMix = wetDryMix
 		return reverbEffect
     }
