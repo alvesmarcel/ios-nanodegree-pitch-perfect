@@ -10,9 +10,7 @@ Clone the GitHub repository:
 ```shell
 $ git clone https://github.com/alvesmarcel/ios-nanodegree-pitch-perfect.git
 ```
-Then open UdacityPitchPerfect.xcodeproj in Xcode (7.0 or above) and build it.
-
-**The Storyboard screen sizes should be configured to _w Compact h Any_.**
+Then open UdacityPitchPerfect.xcodeproj in Xcode (8.0 or above) and build it.
 
 ## Usage
 
