@@ -166,7 +166,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	}
 	
 	// Blinks recordingLabel according to timer
-	func blinkRecordingLabel() {
+	@objc func blinkRecordingLabel() {
 		if (recordingLabel.alpha == 0.0) {
 			UIView.animate(withDuration: kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
 		} else {
