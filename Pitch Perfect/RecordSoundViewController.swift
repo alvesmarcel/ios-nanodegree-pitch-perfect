@@ -160,17 +160,14 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 			pauseStopButton.setImage(UIImage(named: "pause_200_blue"), for: UIControlState())
 			pauseStopButton.isHidden = false
 			recordButton.isEnabled = false
-            timer = Timer.scheduledTimer(timeInterval: kRecordingLabelFadeTime, target:self, selector: #selector(blinkRecordingLabel), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(withTimeInterval: kRecordingLabelFadeTime, repeats: true, block: { timer in
+                if (self.recordingLabel.alpha == 0.0) {
+                    UIView.animate(withDuration: self.kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
+                } else {
+                    UIView.animate(withDuration: self.kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 0.0})
+                }
+            })
 			break
-		}
-	}
-	
-	// Blinks recordingLabel according to timer
-	@objc func blinkRecordingLabel() {
-		if (recordingLabel.alpha == 0.0) {
-			UIView.animate(withDuration: kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 1.0})
-		} else {
-			UIView.animate(withDuration: kRecordingLabelFadeTime, animations: {self.recordingLabel.alpha = 0.0})
 		}
 	}
 }
