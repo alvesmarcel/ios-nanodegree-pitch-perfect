@@ -36,6 +36,11 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     fileprivate var timer = Timer()
 	
 	// MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 	
     override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -97,10 +102,17 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
             print(filePath ?? "filePath is nil")
 			
             let session = AVAudioSession.sharedInstance()
+            
             do {
                 try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
             } catch let error as NSError {
 				print("Error trying to set audio session category. \(error.localizedDescription)")
+            }
+            
+            do {
+                try session.overrideOutputAudioPort(.speaker)
+            } catch let error as NSError {
+                print("audioSession error: \(error.localizedDescription)")
             }
 			
 			// Initialize audioRecorder and sets its delegate
