@@ -279,6 +279,9 @@
                                 <rect key="frame" x="146" y="532" width="82" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Custom"/>
+                                <connections>
+                                    <action selector="customButtonTapped:" destination="t8s-sb-rAE" eventType="touchUpInside" id="X4H-91-xOO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -320,6 +323,7 @@
                     </view>
                     <connections>
                         <outlet property="chipmunkEffectButton" destination="okc-Yk-KKS" id="Cin-T6-3oC"/>
+                        <outlet property="customButtonTapped" destination="0br-bQ-0bc" id="bAo-eT-8VJ"/>
                         <outlet property="darthVaderEffectButton" destination="VCM-1n-nzt" id="dtg-Ji-suz"/>
                         <outlet property="fastEffectButton" destination="Xc2-c3-E6C" id="IR2-ho-RTY"/>
                         <outlet property="reverbEffectButton" destination="OpG-tH-mpf" id="tSX-AS-qm0"/>

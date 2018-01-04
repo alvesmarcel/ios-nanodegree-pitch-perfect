@@ -107,6 +107,10 @@ class PlaySoundViewController: UIViewController {
 	@IBAction func stopButtonTapped(_ sender: UIButton) {
 		stopAudio()
 	}
+    
+    @IBAction func customButtonTapped(_ sender: UIButton) {
+        
+    }
 	
 	// MARK: Play and stop audio methods
 	
