@@ -323,7 +323,6 @@
                     </view>
                     <connections>
                         <outlet property="chipmunkEffectButton" destination="okc-Yk-KKS" id="Cin-T6-3oC"/>
-                        <outlet property="customButtonTapped" destination="0br-bQ-0bc" id="bAo-eT-8VJ"/>
                         <outlet property="darthVaderEffectButton" destination="VCM-1n-nzt" id="dtg-Ji-suz"/>
                         <outlet property="fastEffectButton" destination="Xc2-c3-E6C" id="IR2-ho-RTY"/>
                         <outlet property="reverbEffectButton" destination="OpG-tH-mpf" id="tSX-AS-qm0"/>
@@ -333,6 +332,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1m-qN-TBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088" y="-458"/>
+        </scene>
+        <!--Custom Effect View Controller-->
+        <scene sceneID="523-AP-ypr">
+            <objects>
+                <viewController storyboardIdentifier="CustomEffectViewController" id="dVK-b2-gaW" customClass="CustomEffectViewController" customModule="UdacityPitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6j7-Nh-jZA"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Kv-3O-LQO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yEH-Af-5yg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLK-qY-914" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2794" y="-458"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gMx-w0-59u">

@@ -6,4 +6,18 @@
 //  Copyright © 2018 Marcel Oliveira Alves. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import AVFoundation
+
+class CustomEffectViewController: UIViewController {
+
+    // MARK: Class variables
+    
+    var receivedAudio: RecordedAudio!
+    
+    // MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
