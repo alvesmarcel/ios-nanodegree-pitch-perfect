@@ -349,6 +349,9 @@
                                 <rect key="frame" x="165" y="582" width="44" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="dVK-b2-gaW" eventType="touchUpInside" id="cxc-wI-mNS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTN-er-O1a">
                                 <rect key="frame" x="16" y="499" width="35" height="21"/>
@@ -374,13 +377,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="s5Z-U2-tCc">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.03125" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="s5Z-U2-tCc">
                                 <rect key="frame" x="14" y="528" width="347" height="31"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E7v-Lb-PYw">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-2400" maxValue="2400" translatesAutoresizingMaskIntoConstraints="NO" id="E7v-Lb-PYw">
                                 <rect key="frame" x="14" y="461" width="347" height="31"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-Hj-kfS">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="3" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-Hj-kfS">
                                 <rect key="frame" x="14" y="394" width="347" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wet Dry Mix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-lC-4P9">
@@ -395,10 +398,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="m0P-hK-k79">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="m0P-hK-k79">
                                 <rect key="frame" x="14" y="276" width="347" height="31"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vLh-w0-sCu">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-6" minValue="-20" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="vLh-w0-sCu">
                                 <rect key="frame" x="14" y="209" width="347" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distortion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-D1-kxo">
@@ -443,6 +446,13 @@
                             <constraint firstItem="3Kv-3O-LQO" firstAttribute="top" secondItem="leo-c2-Q4h" secondAttribute="bottom" constant="44" id="voF-eS-Jpy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distMixSlider" destination="m0P-hK-k79" id="lnT-5Z-DZ5"/>
+                        <outlet property="distPregainSlider" destination="vLh-w0-sCu" id="X9V-SB-tXm"/>
+                        <outlet property="pitchOverlapSlider" destination="OVd-Hj-kfS" id="YvT-LF-sVm"/>
+                        <outlet property="pitchPitchSlider" destination="E7v-Lb-PYw" id="FW6-Ri-QSp"/>
+                        <outlet property="pitchRateSlider" destination="s5Z-U2-tCc" id="AFt-bg-wIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLK-qY-914" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
