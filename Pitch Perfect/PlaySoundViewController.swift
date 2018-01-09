@@ -6,9 +6,6 @@
 import UIKit
 import AVFoundation
 
-/**
- An UIViewController subclass responsible for the audio playing screen.
- */
 class PlaySoundViewController: UIViewController {
 	
 	// MARK: Outlets

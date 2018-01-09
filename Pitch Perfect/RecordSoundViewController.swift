@@ -6,12 +6,10 @@
 import UIKit
 import AVFoundation
 
-/**
- An UIViewController subclass responsible for the recording screen.
- Conforms AVAudioRecorderDelegate protocol.
- */
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
+    enum UIState { case stopped, paused, recording }
+    
 	// MARK: Outlets
     
     @IBOutlet weak var recordingLabel: UILabel!
@@ -20,11 +18,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	// MARK: Constants
 	
-    // Indicates the time/speed (in seconds) to blink the recordingLabel.
 	fileprivate let kRecordingLabelFadeTime = 0.5
     
-    // Represents the 3 possible states of the recording
-    enum UIState { case stopped, paused, recording }
+    
 	
 	// MARK: Class variables
 
