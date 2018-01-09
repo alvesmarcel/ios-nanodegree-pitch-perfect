@@ -20,8 +20,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 	
 	fileprivate let kRecordingLabelFadeTime = 0.5
     
-    
-	
 	// MARK: Class variables
 
     fileprivate var audioRecorder:AVAudioRecorder!
