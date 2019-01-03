@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		281392FE1FFE75E00039480D /* CustomEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281392FD1FFE75E00039480D /* CustomEffectViewController.swift */; };
 		28A034231ABA48AD006F6846 /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */; };
 		28DB3B8B1AC5E445006490DF /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */; };
 		28F52D7C1AB24F470092561F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F52D7B1AB24F470092561F /* AppDelegate.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		281392FD1FFE75E00039480D /* CustomEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEffectViewController.swift; sourceTree = "<group>"; };
 		28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		28DB3B8A1AC5E445006490DF /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		28F52D761AB24F470092561F /* UdacityPitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdacityPitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +53,6 @@
 			children = (
 				28F52D7D1AB24F470092561F /* RecordSoundViewController.swift */,
 				28A034221ABA48AD006F6846 /* PlaySoundViewController.swift */,
-				281392FD1FFE75E00039480D /* CustomEffectViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,7 +188,6 @@
 				28DB3B8B1AC5E445006490DF /* RecordedAudio.swift in Sources */,
 				28F52D7E1AB24F470092561F /* RecordSoundViewController.swift in Sources */,
 				28A034231ABA48AD006F6846 /* PlaySoundViewController.swift in Sources */,
-				281392FE1FFE75E00039480D /* CustomEffectViewController.swift in Sources */,
 				28F52D7C1AB24F470092561F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
