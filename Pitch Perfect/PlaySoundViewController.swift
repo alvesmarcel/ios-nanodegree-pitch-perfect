@@ -101,12 +101,6 @@ class PlaySoundViewController: UIViewController {
 	@IBAction func stopButtonTapped(_ sender: UIButton) {
 		stopAudio()
 	}
-    
-    @IBAction func customButtonTapped(_ sender: UIButton) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "CustomEffectViewController") as! CustomEffectViewController
-        controller.receivedAudio = receivedAudio
-        self.show(controller, sender: self)
-    }
 	
 	// MARK: Play and stop audio methods
 	
