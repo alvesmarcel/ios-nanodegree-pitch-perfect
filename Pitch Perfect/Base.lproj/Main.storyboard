@@ -100,9 +100,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="ND6-OA-v7f"/>
                     <connections>
-                        <outlet property="pauseStopButton" destination="oY1-cM-3ep" id="Yqs-1j-tGV"/>
+                        <outlet property="pauseStopButton" destination="oY1-cM-3ep" id="26a-Ju-jgj"/>
                         <outlet property="recordButton" destination="frp-gY-2Ep" id="rJY-1b-5OG"/>
-                        <outlet property="recordingLabel" destination="kDQ-mi-439" id="SQm-K6-pw2"/>
+                        <outlet property="recordingLabel" destination="kDQ-mi-439" id="Jt7-De-0ZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
